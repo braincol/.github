@@ -6,73 +6,91 @@
   </picture>
 </p>
 
-<h3 align="center">Enterprise-grade solutions for the AI agent era</h3>
+<h3 align="center">Enterprise-grade intelligence &amp; security infrastructure for the AI agent era</h3>
 
 <p align="center">
-  We build security &amp; intelligence infrastructure that solves real problems<br/>
-  in agentic technologies &mdash; multi-agent systems, secret governance, and anomaly detection.
+  We solve real problems in agentic technologies &mdash; from AI-driven anomaly detection<br/>
+  across any data source, to making sure secrets never leak into LLM context windows.
 </p>
 
 ---
 
 ### What we build
 
-| Project | Description | Status |
+| Project | What it does | Status |
 |---------|-------------|--------|
-| **Braincol Sentry** | Agentic, source-agnostic data intelligence platform. Four-plane architecture for financial monitoring & analysis with AI agent capabilities. | Active Development |
-| **Braincol Vault** | Local-first secret manager for the AI agent era. Reference implementation of the Never Leak Protocol. Ensures secrets are used but never visible to AI agents. | v1.0 Released |
-| **Never Leak Protocol** | The open standard for AI agent secret governance. Agents request actions, not secrets. 7 levels of defense. | v1.0 Specification |
+| **Braincol Sentry** | Source-agnostic agentic intelligence platform. Connects to any data source, detects anomalies with AI, and explains what happened and why &mdash; with enterprise security, compliance, and audit built in. | Active Development |
+| **Braincol Vault** | The first secret manager purpose-built for AI coding agents. Secrets are used but never visible to the LLM. Reference implementation of the Never Leak Protocol. | v1.0 Released |
+| **Never Leak Protocol** | Open standard (Apache 2.0) for AI agent secret governance. 7 levels of defense. Agents request actions, not secrets. | v1.0 Specification |
 
 ---
 
 ### Braincol Sentry
 
-An agentic data intelligence platform with a four-plane architecture:
+Most monitoring tools are source-specific, reactive, rules-based, and bolt on multi-tenancy as an afterthought. Sentry is the opposite on every dimension.
+
+**The problem:** Organizations have no unified way to understand, monitor, and investigate anomalies across their entire data landscape. You end up with Datadog for metrics, Splunk for logs, custom scripts for correlation, and manual alert tuning &mdash; 3+ vendors, zero cross-source intelligence.
+
+**What Sentry does differently:**
+
+- **Source-agnostic AI agent** &mdash; The agent understands *concepts* (aggregation, cardinality, drift, anomalies), not specific databases. Add a new data source by creating an MCP server; the agent uses it automatically without code changes. Same anomaly detection works across Elasticsearch, Postgres, S3, data warehouses, or any API.
+
+- **LLM reasons, Python computes** &mdash; The LLM handles intent classification, hypothesis generation, and explanation. Heavy math (z-scores, MAD, STL decomposition, changepoints) runs in Python with Polars/SciPy. Result: intelligence at 10x lower token cost than alternatives.
+
+- **Deny-by-default security** &mdash; Every operation goes through a Policy Decision Point (PDP) that returns not just allow/deny, but *obligations*: redact PII, limit to 100 rows, restrict tools, enforce budget. PDP unavailable? Deny everything. No policy exists? Deny. Fail-closed, always.
+
+- **Immutable audit trail** &mdash; Append-only, hash-chained, monotonic sequences, WORM-anchored. Legal holds prevent purge. Every access, every policy decision, every agent action &mdash; cryptographically verifiable. Built for SOX, HIPAA, GDPR, and PCI-DSS auditors.
+
+- **Multi-tenancy from day one** &mdash; Organization &rarr; Workspace isolation. `workspaceId` mandatory on every query. Secrets accessed via lease/redeem pattern (JWE encrypted, single-use tokens, 60s TTL). Cross-tenant access returns 404, not 403 &mdash; don't even reveal existence.
+
+**Four-plane architecture:**
 
 ```
-Trust & Money Plane     ──  Auth, policy, billing, secrets, audit
-Product / Control Plane ──  Connectors, resources, jobs, artifacts
-Execution / Reasoning   ──  LLM workflows, MCP tools, anomaly detection
-Presentation Plane      ──  Dashboards, real-time visualizations
+Trust & Money       ──  Auth, PDP, billing, encrypted secrets, immutable audit (NestJS)
+Product / Control   ──  Connectors, resources, versioned artifacts, job orchestration (NestJS)
+Execution / Reason  ──  LangGraph workflows, MCP tools, anomaly detection, Polars (Python)
+Presentation        ──  Chat interface, streaming responses, real-time dashboards (Next.js)
 ```
 
-Built with NestJS, FastAPI, Next.js, LangGraph, MongoDB, and Redis. Designed for enterprise-grade financial monitoring, anomaly analysis, and AI-driven investigation at the highest levels of intelligence and security.
+Each plane is independently deployable, independently scalable, and architecturally isolated. The agent plane can crash without affecting auth. The security plane can't execute business logic. By design, not by discipline.
+
+---
 
 ### Braincol Vault
 
-The first secret manager purpose-built for AI coding agents. Every AI agent (Claude Code, Cursor, Copilot, etc.) has a fundamental flaw: when given a secret, it enters the LLM context window. Braincol Vault prevents this entirely.
+Every AI coding agent (Claude Code, Cursor, Copilot, Codex) has a fundamental flaw: when you give it a secret, that secret enters the LLM context window. Braincol Vault prevents this entirely.
 
-- **5-layer defense architecture** &mdash; From instructions to cryptography (X25519 + ChaCha20-Poly1305)
+- **5-layer defense** &mdash; Instructions &rarr; Permissions &rarr; Interception &rarr; MCP opaque proxy &rarr; Cryptography (X25519 + ChaCha20-Poly1305)
 - **7 agent integrations** &mdash; Claude Code, Cursor, Copilot, Codex, Windsurf, Aider, and generic MCP
-- **Multi-user RBAC** &mdash; Admin, Editor, Viewer roles with per-project scoping
-- **2,128+ tests** &mdash; Comprehensive security, unit, integration, and E2E coverage
+- **`{{nl:namespace/SECRET}}` placeholders** &mdash; Agents request actions, never receive values
+- **Multi-user RBAC** &mdash; Admin, Editor, Viewer with per-project, per-environment scoping
+- **2,128+ tests** &mdash; Security, unit, integration, and E2E coverage
+- **Zero custom crypto** &mdash; Built on pyrage (age-encryption standard)
 
 ### Never Leak Protocol
 
-An open standard (Apache 2.0) that defines how AI agents must interact with secrets without them ever entering the LLM context.
+The open standard (Apache 2.0) that defines how AI agents must interact with secrets. Braincol Vault is its first implementation.
 
-**7 Levels of Defense:**
+| Level | Defense | What it does |
+|-------|---------|-------------|
+| L1 | Agent Identity | Cryptographic identity, trust tiers, JWT-based |
+| L2 | Action-Based Access | Opaque handles &mdash; agents request actions, never see values |
+| L3 | Execution Isolation | Subprocess sandboxing, environment scrubbing, memory wipe |
+| L4 | Pre-Execution Defense | Command interception, prompt injection detection |
+| L5 | Audit & Integrity | SHA-256 hash-chained, tamper-evident audit records |
+| L6 | Attack Detection | Behavioral anomaly detection, automatic circuit breakers |
+| L7 | Cross-Agent Trust | Delegation tokens with scope attenuation |
 
-| Level | Name | Purpose |
-|-------|------|---------|
-| L1 | Agent Identity | Cryptographic identity and trust levels |
-| L2 | Action-Based Access | Agents request actions, not secrets |
-| L3 | Execution Isolation | Subprocess execution, env scrubbing |
-| L4 | Pre-Execution Defense | Command interception, injection detection |
-| L5 | Audit & Integrity | SHA-256 hash-chained, tamper-evident records |
-| L6 | Attack Detection | Behavioral anomaly detection, circuit breakers |
-| L7 | Cross-Agent Trust | Delegation tokens, scope attenuation |
-
-Aligned with OWASP Top 10 for LLMs, MCP, and Agentic Apps.
+**Conformance tiers:** Basic (L1-L3) for startups, Standard (L1-L5) for SaaS teams, Advanced (L1-L7) for enterprise and regulated industries. Aligned with OWASP Top 10 for LLMs, MCP, and Agentic Apps.
 
 ---
 
 ### Tech Stack
 
-`TypeScript` `Python` `NestJS` `FastAPI` `Next.js` `React` `LangGraph` `MongoDB` `Redis` `Turborepo`
+`TypeScript` `Python` `NestJS` `FastAPI` `Next.js` `React 19` `LangGraph` `MongoDB` `Redis` `Turborepo` `Polars` `Zod` `Pydantic`
 
 ---
 
 <p align="center">
-  <sub>Braincol &mdash; Building the security & intelligence infrastructure for the agentic future.</sub>
+  <sub>Braincol &mdash; Security &amp; intelligence infrastructure for the agentic future.</sub>
 </p>
