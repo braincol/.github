@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&amp;display=swap');
+      .title { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; font-size: 54px; fill: #f5f5f5; }
+      .subtitle { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; font-size: 14px; fill: #a3a3a3; letter-spacing: 0.15em; }
+    </style>
+  </defs>
+  <!-- Logo: Orange isometric cube -->
+  <g transform="translate(140, 10) scale(0.95)">
+    <polygon points="20,50 70,25 70,95 20,120" fill="#f97316"/>
+    <polygon points="70,25 120,50 120,120 70,95" fill="#ea580c"/>
+    <polygon points="20,50 70,25 120,50 70,75" fill="#fb923c"/>
+  </g>
+  <!-- Text -->
+  <text x="290" y="95" class="title">BRAINCOL</text>
+  <text x="290" y="125" class="subtitle">ENTERPRISE AGENTIC SOLUTIONS</text>
+</svg>
