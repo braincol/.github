@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="800" height="180">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&amp;display=swap');
-      .title { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; font-size: 54px; fill: #f5f5f5; }
-      .subtitle { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; font-size: 14px; fill: #a3a3a3; letter-spacing: 0.15em; }
+      .title { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 58px; fill: #f5f5f5; }
+      .subtitle { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 13.5px; fill: #737373; letter-spacing: 0.2em; }
     </style>
     <linearGradient id="d-left" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#10B981"/>
@@ -21,8 +21,8 @@
       <stop offset="100%" stop-color="#C4B5FD"/>
     </linearGradient>
   </defs>
-  <!-- Sliced Monolith -->
-  <g transform="translate(120, 5) scale(1.05)">
+  <!-- Sliced Monolith — centered with text -->
+  <g transform="translate(200, 8) scale(1.15)">
     <polygon points="25,37 70,15 115,37 70,59" fill="url(#d-top)"/>
     <polygon points="25,37 70,59 70,65 25,43" fill="url(#d-left)"/>
     <polygon points="70,59 115,37 115,43 70,65" fill="url(#d-right)"/>
@@ -34,6 +34,6 @@
     <polygon points="70,93 115,71 115,102 70,124" fill="url(#d-right)"/>
   </g>
   <!-- Text -->
-  <text x="290" y="95" class="title">BRAINCOL</text>
-  <text x="290" y="125" class="subtitle">ENTERPRISE AGENTIC SOLUTIONS</text>
+  <text x="530" y="98" text-anchor="middle" class="title">BRAINCOL</text>
+  <text x="530" y="130" text-anchor="middle" class="subtitle">ENTERPRISE AGENTIC SOLUTIONS</text>
 </svg>
