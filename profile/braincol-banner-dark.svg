@@ -5,12 +5,33 @@
       .title { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; font-size: 54px; fill: #f5f5f5; }
       .subtitle { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; font-size: 14px; fill: #a3a3a3; letter-spacing: 0.15em; }
     </style>
+    <linearGradient id="d-left" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="d-right" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="d-top" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="50%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
   </defs>
-  <!-- Logo: Orange isometric cube -->
-  <g transform="translate(140, 10) scale(0.95)">
-    <polygon points="20,50 70,25 70,95 20,120" fill="#f97316"/>
-    <polygon points="70,25 120,50 120,120 70,95" fill="#ea580c"/>
-    <polygon points="20,50 70,25 120,50 70,75" fill="#fb923c"/>
+  <!-- Sliced Monolith -->
+  <g transform="translate(120, 5) scale(1.05)">
+    <polygon points="25,37 70,15 115,37 70,59" fill="url(#d-top)"/>
+    <polygon points="25,37 70,59 70,65 25,43" fill="url(#d-left)"/>
+    <polygon points="70,59 115,37 115,43 70,65" fill="url(#d-right)"/>
+    <polygon points="25,49 70,71 70,76 25,54" fill="url(#d-left)"/>
+    <polygon points="70,71 115,49 115,54 70,76" fill="url(#d-right)"/>
+    <polygon points="25,60 70,82 70,87 25,65" fill="url(#d-left)"/>
+    <polygon points="70,82 115,60 115,65 70,87" fill="url(#d-right)"/>
+    <polygon points="25,71 70,93 70,124 25,102" fill="url(#d-left)"/>
+    <polygon points="70,93 115,71 115,102 70,124" fill="url(#d-right)"/>
   </g>
   <!-- Text -->
   <text x="290" y="95" class="title">BRAINCOL</text>

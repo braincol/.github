@@ -6,22 +6,45 @@
   </picture>
 </p>
 
-<h3 align="center">Enterprise-grade intelligence &amp; security infrastructure for the AI agent era</h3>
+<p align="center">
+  <strong>Building the infrastructure for AI-native enterprises.</strong>
+</p>
 
 <p align="center">
-  We solve real problems in agentic technologies &mdash; from AI-driven anomaly detection<br/>
-  across any data source, to making sure secrets never leak into LLM context windows.
+  Secure credential management, intelligent monitoring, and open security standards<br/>
+  for the next generation of enterprise software.
+</p>
+
+<p align="center">
+  <a href="https://braincol.com">Website</a> &middot;
+  <a href="https://github.com/braincol/braincol-vault">Vault</a> &middot;
+  <a href="https://github.com/braincol/braincol-sentry">Sentry</a> &middot;
+  <a href="https://github.com/braincol/never-leak-protocol">NL Protocol</a>
 </p>
 
 ---
 
 ### What we build
 
-| Project | What it does | Status |
-|---------|-------------|--------|
-| **Braincol Sentry** | Source-agnostic agentic intelligence platform. Connects to any data source, detects anomalies with AI, and explains what happened and why &mdash; with enterprise security, compliance, and audit built in. | Active Development |
-| **Braincol Vault** | The first secret manager purpose-built for AI coding agents. Secrets are used but never visible to the LLM. Reference implementation of the Never Leak Protocol. | v1.0 Released |
-| **Never Leak Protocol** | Open standard (Apache 2.0) for AI agent secret governance. 7 levels of defense. Agents request actions, not secrets. | v1.0 Specification |
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>🔐 <a href="https://github.com/braincol/braincol-vault">Braincol Vault</a></h4>
+      The first secret manager purpose-built for AI coding agents. Secrets are used but never visible to the LLM. Reference implementation of the Never Leak Protocol.<br/><br/>
+      <a href="https://github.com/braincol/braincol-vault"><img src="https://img.shields.io/badge/v1.0-Released-22C55E?style=flat-square" alt="Released"/></a>
+    </td>
+    <td width="33%" valign="top">
+      <h4>📡 <a href="https://github.com/braincol/braincol-sentry">Braincol Sentry</a></h4>
+      Source-agnostic agentic intelligence platform. Connects to any data source, detects anomalies with AI, and explains what happened and why.<br/><br/>
+      <a href="https://github.com/braincol/braincol-sentry"><img src="https://img.shields.io/badge/status-Active_Development-3B82F6?style=flat-square" alt="Active Development"/></a>
+    </td>
+    <td width="33%" valign="top">
+      <h4>🛡️ <a href="https://github.com/braincol/never-leak-protocol">Never Leak Protocol</a></h4>
+      Open standard for AI agent secret governance. 7 levels of defense. Agents request actions, not secrets.<br/><br/>
+      <a href="https://github.com/braincol/never-leak-protocol"><img src="https://img.shields.io/badge/spec-v1.0-8B5CF6?style=flat-square" alt="v1.0 Spec"/></a>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -64,7 +87,7 @@ Every AI coding agent (Claude Code, Cursor, Copilot, Codex) has a fundamental fl
 - **7 agent integrations** &mdash; Claude Code, Cursor, Copilot, Codex, Windsurf, Aider, and generic MCP
 - **`{{nl:namespace/SECRET}}` placeholders** &mdash; Agents request actions, never receive values
 - **Multi-user RBAC** &mdash; Admin, Editor, Viewer with per-project, per-environment scoping
-- **2,128+ tests** &mdash; Security, unit, integration, and E2E coverage
+- **2,655 tests** &mdash; Security, unit, integration, and E2E coverage
 - **Zero custom crypto** &mdash; Built on pyrage (age-encryption standard)
 
 ### Never Leak Protocol
@@ -92,5 +115,7 @@ The open standard (Apache 2.0) that defines how AI agents must interact with sec
 ---
 
 <p align="center">
-  <sub>Braincol &mdash; Security &amp; intelligence infrastructure for the agentic future.</sub>
+  <a href="https://braincol.com">braincol.com</a>
+  <br/><br/>
+  <sub>Built in Colombia &mdash; Security &amp; intelligence infrastructure for the agentic future.</sub>
 </p>
