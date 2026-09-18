@@ -26,5 +26,5 @@
 ---
 
 <p align="center">
-  <sub>Built with care in Colombia. · <a href="mailto:hello@braincol.com">hello@braincol.com</a></sub>
+  <sub><a href="mailto:hello@braincol.com">hello@braincol.com</a></sub>
 </p>
