@@ -18,9 +18,10 @@
 
 ---
 
-**Foresight** · Ask for the result, not the model. → [foresightrouter.com](https://foresightrouter.com) *(coming soon)*
-
-**Never Leak Standard** · The open standard for AI agent secret governance. → [never-leak-standard](https://github.com/braincol/never-leak-standard)
+<p align="center">
+  <strong>Foresight</strong> · Ask for the result, not the model.<br>
+  <a href="https://foresightrouter.com">foresightrouter.com</a> <em>(coming soon)</em>
+</p>
 
 ---
 
